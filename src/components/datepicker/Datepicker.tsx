@@ -1,11 +1,4 @@
-import { setDefaultOptions } from "date-fns";
-import { enUS } from "date-fns/locale";
 import SelectDate from "./selectDate/SelectDate.tsx";
-
-setDefaultOptions({
-  locale: enUS,
-  weekStartsOn: 1,
-});
 
 export default function Datepicker() {
   return (

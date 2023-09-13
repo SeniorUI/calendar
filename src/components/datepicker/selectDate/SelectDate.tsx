@@ -25,11 +25,11 @@ export default function SelectDate() {
 
       <section className="grid grid-cols-7 place-items-center text-sm">
         {labels.map((label) => (
-          <Label label={label} />
+          <Label key={label} label={label} />
         ))}
 
         {days.map((date) => (
-          <Day date={date} />
+          <Day key={date.toString()} date={date} />
         ))}
 
         <button className="flex w-full items-center justify-center rounded-lg p-0.5 py-1.5 hover:bg-blue-400 hover:bg-opacity-60">
