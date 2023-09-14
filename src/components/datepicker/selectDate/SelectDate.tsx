@@ -7,7 +7,11 @@ import getDaysFrom from "./_getDaysFrom.ts";
 const days = getDaysFrom(startOfToday());
 const labels = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
-export default function SelectDate() {
+type SelectDateProps = {
+  onChangeCalendarView: (fullView: true) => void;
+};
+
+export default function SelectDate({ onChangeCalendarView }: SelectDateProps) {
   return (
     <div>
       <h2 className="mb-2 text-center text-sm">Select date</h2>
@@ -32,7 +36,10 @@ export default function SelectDate() {
           <Day key={date.toString()} date={date} />
         ))}
 
-        <button className="flex w-full items-center justify-center rounded-lg p-0.5 py-1.5 hover:bg-blue-400 hover:bg-opacity-60">
+        <button
+          onClick={() => onChangeCalendarView(true)}
+          className="flex w-full items-center justify-center rounded-lg p-0.5 py-1.5 hover:bg-blue-400 hover:bg-opacity-60"
+        >
           <ChevronRightIcon className="h-5 w-5" />
         </button>
       </section>
